@@ -1,15 +1,16 @@
 import sys
 from random import randint
 
-from PyQt5 import uic
 from PyQt5.QtGui import QPainter, QColor
 from PyQt5.QtWidgets import QMainWindow, QApplication
 
+from Ui import Ui_MainWindow
 
-class DrawCircle(QMainWindow):
+
+class DrawCircle(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super(DrawCircle, self).__init__()
-        uic.loadUi('Ui.ui', self)
+        self.setupUi(self)
         self.pushButton.clicked.connect(self.run)
         self.w = self.size().width()
         self.h = self.size().height()
