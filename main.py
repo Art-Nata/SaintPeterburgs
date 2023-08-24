@@ -27,7 +27,10 @@ class DrawCircle(QMainWindow):
         self.update()
 
     def paint(self, qp):
-        qp.setBrush(QColor(255, 255, 0))
+        r = randint(0, 255)
+        g = randint(0, 255)
+        b = randint(0, 255)
+        qp.setBrush(QColor(r, g, b))
         a = randint(10, 80)
         x = randint(10, self.w - a)
         y = randint(10, self.h - a)
